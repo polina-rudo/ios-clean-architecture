@@ -12,6 +12,9 @@ class CharacterCell: UITableViewCell {
 
     @IBOutlet weak var characterName: UILabel!
     @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var statusIndicator: UIImageView!
+    @IBOutlet weak var backCellView: UIView!
+
     // MARK: - Life Cycle
     var character: CharacterDTO! {
         didSet {
@@ -20,12 +23,19 @@ class CharacterCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     // MARK: - Functions
     func setupUI() {
+        if character.status == "Alive" {
+            statusIndicator.tintColor = .green
+        } else {
+            statusIndicator.tintColor = .red
+        }
+
         characterName.text = character.name
         characterImage.layer.borderWidth = 1
         characterImage.layer.masksToBounds = false
@@ -37,5 +47,11 @@ class CharacterCell: UITableViewCell {
         if let url = URL(string: character.image) {
             characterImage.load(url: url)
         }
+    }
+
+    enum Status {
+        case alive
+        case unknown
+        case dead
     }
 }

@@ -65,10 +65,19 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.character = self.viewModel.characters[indexPath.row]
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToCharDetail(character: viewModel.characters[indexPath.row])
+    }
 }
 
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.viewModel.search(this: searchText)
+    }
+
+    func goToCharDetail(character: CharacterDTO) {
+        DetailBuilder().build().character = character
+        self.navigationController?.pushViewController(DetailBuilder().build(), animated: true)
     }
 }

@@ -16,6 +16,7 @@ struct InfoDTO: Codable {
 struct CharacterDTO: Codable {
     var image: String
     var name: String
+    var status: String
 }
 
 struct ListDTO: Codable {

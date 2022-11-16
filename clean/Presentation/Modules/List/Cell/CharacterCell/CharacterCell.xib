@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +19,9 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXm-Gl-vPX">
                         <rect key="frame" x="90" y="25" width="210" height="30"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65t-td-A8Y">
@@ -29,25 +31,41 @@
                             <constraint firstAttribute="width" constant="50" id="tMt-PO-TLt"/>
                         </constraints>
                     </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6zV-ss-1GB">
+                        <rect key="frame" x="271" y="29" width="19" height="22.666666666666671"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="MtK-FB-xdm"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="6zV-ss-1GB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="28" id="5gB-cW-G46"/>
                     <constraint firstItem="65t-td-A8Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="61D-Uh-BPX"/>
                     <constraint firstItem="eXm-Gl-vPX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="GcB-cB-099"/>
+                    <constraint firstAttribute="trailing" secondItem="6zV-ss-1GB" secondAttribute="trailing" constant="30" id="Gfl-Gx-GTp"/>
                     <constraint firstAttribute="trailing" secondItem="eXm-Gl-vPX" secondAttribute="trailing" constant="20" id="GmO-F5-SC6"/>
                     <constraint firstItem="eXm-Gl-vPX" firstAttribute="leading" secondItem="65t-td-A8Y" secondAttribute="trailing" constant="20" id="ULf-1Y-Rbq"/>
+                    <constraint firstItem="6zV-ss-1GB" firstAttribute="leading" secondItem="65t-td-A8Y" secondAttribute="trailing" constant="201" id="csy-sI-ic7"/>
                     <constraint firstItem="eXm-Gl-vPX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="e8Z-FR-ZyM"/>
                     <constraint firstItem="65t-td-A8Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="kGv-13-emq"/>
                     <constraint firstItem="65t-td-A8Y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="pwp-86-itu"/>
                     <constraint firstAttribute="bottom" secondItem="65t-td-A8Y" secondAttribute="bottom" constant="15" id="tAw-Rd-0SO"/>
                     <constraint firstAttribute="bottom" secondItem="eXm-Gl-vPX" secondAttribute="bottom" constant="25" id="vCb-Sd-ZuW"/>
+                    <constraint firstAttribute="bottom" secondItem="6zV-ss-1GB" secondAttribute="bottom" constant="28" id="vxZ-Ea-jwP"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backCellView" destination="H2p-sc-9uM" id="tG4-Os-vVh"/>
                 <outlet property="characterImage" destination="65t-td-A8Y" id="EPv-Vo-zSO"/>
                 <outlet property="characterName" destination="eXm-Gl-vPX" id="mc2-R1-jFo"/>
+                <outlet property="statusIndicator" destination="6zV-ss-1GB" id="f8L-fn-iW5"/>
             </connections>
-            <point key="canvasLocation" x="138.93129770992365" y="28.52112676056338"/>
+            <point key="canvasLocation" x="138.93129770992365" y="28.169014084507044"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
 </document>
